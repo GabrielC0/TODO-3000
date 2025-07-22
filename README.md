@@ -3,10 +3,41 @@
 
 > *Une application de gestion de tâches futuriste avec IA sarcastique intégrée !*
 
+<div align="center">
+
+### 🎮 [**DÉMO EN DIRECT - CLIQUEZ ICI !**](./todo_3000_standalone.html)
+
+[![Tester TO-DO 3000](https://img.shields.io/badge/🚀%20TESTER%20MAINTENANT-TO--DO%203000-00ffff?style=for-the-badge&logoColor=white)](./todo_3000_standalone.html)
+
+*Aucune installation requise - Fonctionne dans votre navigateur !*
+
+</div>
+
+---
+
+## 🔗 Liens Rapides
+
+<div align="center">
+
+| Action | Lien |
+|--------|------|
+| 🎮 **Tester l'App** | **[DÉMO LIVE](./todo_3000_standalone.html)** |
+| 📥 **Télécharger** | **[todo_3000_standalone.html](./todo_3000_standalone.html)** |
+| 💻 **Version Console** | **[todo_3000.py](./todo_3000.py)** |
+| 🌐 **Version Serveur** | **[todo_3000_web.py](./todo_3000_web.py)** |
+
+</div>
+
 ---
 
 ## 🚀 Démarrage Rapide
 
+### ⚡ Test en Live
+**[🌟 TESTER TO-DO 3000 EN DIRECT 🌟](./todo_3000_standalone.html)**
+
+*Cliquez sur le lien ci-dessus pour lancer l'application immédiatement !*
+
+### 💻 Installation Locale
 **Double-cliquez sur `todo_3000_standalone.html` et c'est parti !** 🎯
 
 Aucune installation requise - ça s'ouvre directement dans votre navigateur !
@@ -15,11 +46,11 @@ Aucune installation requise - ça s'ouvre directement dans votre navigateur !
 
 ## 📦 Versions Disponibles
 
-| Version | Fichier | Description | Status |
-|---------|---------|-------------|--------|
-| 🌐 **Standalone** | `todo_3000_standalone.html` | Interface complète, aucune install | ✅ **RECOMMANDÉ** |
-| 💻 **Console** | `todo_3000.py` | Terminal interactif Python | ⚡ Rapide |
-| 🖥️ **Web Server** | `todo_3000_web.py` | Serveur Flask complet | 🔧 Avancé |
+| Version | Fichier | Description | Status | Demo |
+|---------|---------|-------------|--------|------|
+| 🌐 **Standalone** | `todo_3000_standalone.html` | Interface complète, aucune install | ✅ **RECOMMANDÉ** | **[🎮 TESTER](./todo_3000_standalone.html)** |
+| 💻 **Console** | `todo_3000.py` | Terminal interactif Python | ⚡ Rapide | `python todo_3000.py` |
+| 🖥️ **Web Server** | `todo_3000_web.py` | Serveur Flask complet | 🔧 Avancé | `localhost:5000` |
 
 ---
 
@@ -158,17 +189,24 @@ this.aiResponses = [
 
 ---
 
-## 🎯 Captures d'Écran
+## 🎯 Aperçu de l'Interface
 
-### Interface Principale
-- Design futuriste avec animations d'étoiles
-- Interface sombre avec couleurs néon
-- Formulaire d'ajout intuitif
+<div align="center">
 
-### Panel de Statistiques  
-- Métriques en temps réel
-- Graphiques de progression
-- Console IA interactive
+### 🌌 Interface Principale
+![Interface TO-DO 3000](https://via.placeholder.com/800x400/0c0c0c/00ffff?text=🌟+TO-DO+3000+🌟%0A%0AInterface+Futuriste+avec+Animations+d'Étoiles%0A%0A🎮+CLIQUEZ+SUR+LE+LIEN+DEMO+CI-DESSUS+🎮)
+
+**[🚀 VOIR L'INTERFACE EN ACTION](./todo_3000_standalone.html)**
+
+</div>
+
+### ✨ Fonctionnalités Visuelles
+- **Design futuriste** avec animations d'étoiles scintillantes
+- **Interface sombre** avec couleurs néon (cyan, magenta, vert)
+- **Formulaire d'ajout intuitif** avec effets hover
+- **Panel de statistiques** en temps réel
+- **Console IA interactive** avec messages sarcastiques
+- **Responsive design** qui s'adapte à tous les écrans
 
 ---
 
