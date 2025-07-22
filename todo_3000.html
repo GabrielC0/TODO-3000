@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 TO-DO 3000 - Interface Intersidérale Standalone</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a0033 50%, #000011 100%);
+            color: #00ffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border-bottom: 2px solid #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        .header h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5em;
+            font-weight: 900;
+            text-shadow: 0 0 20px #00ffff;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .status-bar {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(0, 255, 0, 0.2);
+            border-radius: 20px;
+            border: 1px solid #00ff00;
+            font-size: 0.9em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+        
+        .add-task-panel {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+        
+        .add-task-panel h3 {
+            font-family: 'Orbitron', monospace;
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00ffff;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+            color: #00ffff;
+            font-family: 'Exo 2', sans-serif;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #00ff00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(45deg, #00ff00, #00ffff);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(45deg, #ff0080, #ff4000);
+            color: #fff;
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(45deg, #ff4000, #ff0080);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+        
+        .tasks-panel {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+        
+        .tasks-panel h3 {
+            font-family: 'Orbitron', monospace;
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .task-item {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        .task-item:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+        
+        .task-item.completed {
+            opacity: 0.6;
+            border-color: #00ff00;
+        }
+        
+        .task-item.completed .task-description {
+            text-decoration: line-through;
+        }
+        
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .task-id {
+            background: rgba(0, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .task-priority {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .priority-normal { background: rgba(0, 0, 255, 0.3); color: #00ffff; }
+        .priority-prioritaire { background: rgba(255, 255, 0, 0.3); color: #ffff00; }
+        .priority-critique_galactique { background: rgba(255, 0, 0, 0.3); color: #ff4444; }
+        
+        .task-description {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .task-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .success-rate {
+            color: #00ff00;
+            font-weight: 600;
+        }
+        
+        .task-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-small {
+            padding: 5px 12px;
+            font-size: 0.8em;
+            border-radius: 15px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .stats-panel {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+        
+        .stats-panel h3 {
+            font-family: 'Orbitron', monospace;
+            color: #00ff00;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        }
+        
+        .ai-panel {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #ff00ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+        }
+        
+        .ai-panel h3 {
+            font-family: 'Orbitron', monospace;
+            color: #ff00ff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .ai-message {
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            font-style: italic;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.7;
+        }
+        
+        .empty-state h4 {
+            font-family: 'Orbitron', monospace;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="header">
+        <h1>🌟 TO-DO 3000</h1>
+        <div class="subtitle">🤖 Assistant de Productivité Intersidéral - Version Standalone</div>
+        <div class="status-bar">📡 Connexion au serveur cosmique... [ÉTABLIE]</div>
+    </div>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="add-task-panel">
+                <h3>🎯 Nouvelle Mission</h3>
+                <form id="addTaskForm">
+                    <div class="form-group">
+                        <label for="taskDescription">📝 Description de la mission:</label>
+                        <input type="text" id="taskDescription" placeholder="Décrivez votre mission..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">🏷️ Niveau de priorité:</label>
+                        <select id="taskPriority">
+                            <option value="normal">🔵 Normal</option>
+                            <option value="prioritaire">🟡 Prioritaire</option>
+                            <option value="critique_galactique">🔴 Critique Galactique</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">🚀 Lancer la Mission</button>
+                </form>
+            </div>
+            
+            <div class="tasks-panel">
+                <h3>📋 Registre des Missions</h3>
+                <div id="tasksList">
+                    <div class="empty-state">
+                        <h4>🌌 Base de données vide</h4>
+                        <p>Aucune mission en cours. L'univers attend vos instructions...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="stats-panel">
+                <h3>📊 Statistiques Intersidérales</h3>
+                <div class="stat-item">
+                    <span>📝 Total des missions:</span>
+                    <span id="totalTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>✅ Missions accomplies:</span>
+                    <span id="completedTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>⏳ Missions en cours:</span>
+                    <span id="pendingTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>📈 Taux de réussite:</span>
+                    <span id="completionRate">0.0%</span>
+                </div>
+            </div>
+            
+            <div class="ai-panel">
+                <h3>🤖 Console IA</h3>
+                <div class="ai-message" id="aiMessage">
+                    Système en attente de nouvelles missions...
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        class ToDo3000 {
+            constructor() {
+                this.tasks = this.loadTasks();
+                this.nextId = this.getNextId();
+                
+                this.aiResponses = [
+                    "Analyse complète... tâche ajoutée au noyau central.",
+                    "Connexion au Cloud quantique. Tâche reçue.",
+                    "Risque d'échec estimé... Mais bon courage, soldat.",
+                    "Simulation de motivation... erreur fatale. Courage.",
+                    "Base de données mise à jour. L'univers t'observe.",
+                    "Protocole d'accomplissement activé. Que la Force soit avec toi.",
+                    "Tâche intégrée dans la matrice temporelle. Résistance futile.",
+                    "Système neuronal mis à jour. Calculant vos chances de succès...",
+                    "Connexion au serveur d'accomplissement intersidéral... ÉTABLIE.",
+                    "Chargement du protocole motivationnel... 404 - Motivation non trouvée.",
+                    "Synchronisation avec les algorithmes du destin... Terminée."
+                ];
+                
+                this.completionMessages = [
+                    "L'IA est impressionnée par votre efficacité.",
+                    "Algorithme de félicitations activé.",
+                    "Performance détectée : Au-dessus de la moyenne terrienne.",
+                    "Mission validée dans les archives cosmiques.",
+                    "Niveau de productivité : Légendaire !",
+                    "Taux de réussite mis à jour dans la galaxie.",
+                    "🏆 +100 Points de productivité intersidérale !",
+                    "Algorithme de motivation : SUCCÈS DÉTECTÉ."
+                ];
+                
+                this.init();
+            }
+            
+            init() {
+                this.createStars();
+                this.setupEventListeners();
+                this.renderTasks();
+                this.updateStats();
+            }
+            
+            createStars() {
+                const starsContainer = document.getElementById('stars');
+                const numStars = 100;
+                
+                for (let i = 0; i < numStars; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.style.left = Math.random() * 100 + '%';
+                    star.style.top = Math.random() * 100 + '%';
+                    star.style.animationDelay = Math.random() * 3 + 's';
+                    starsContainer.appendChild(star);
+                }
+            }
+            
+            setupEventListeners() {
+                document.getElementById('addTaskForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.addTask();
+                });
+            }
+            
+            loadTasks() {
+                const saved = localStorage.getItem('todo3000_tasks');
+                return saved ? JSON.parse(saved) : [];
+            }
+            
+            saveTasks() {
+                localStorage.setItem('todo3000_tasks', JSON.stringify(this.tasks));
+            }
+            
+            getNextId() {
+                return this.tasks.length > 0 ? Math.max(...this.tasks.map(t => t.id)) + 1 : 1;
+            }
+            
+            addTask() {
+                const description = document.getElementById('taskDescription').value.trim();
+                const priority = document.getElementById('taskPriority').value;
+                
+                if (!description) return;
+                
+                const successRate = Math.floor(Math.random() * 81) + 15; // 15-95%
+                
+                const task = {
+                    id: this.nextId++,
+                    description: description,
+                    priority: priority,
+                    successRate: successRate,
+                    createdAt: new Date().toISOString(),
+                    completed: false
+                };
+                
+                this.tasks.push(task);
+                this.saveTasks();
+                
+                const aiMessage = this.aiResponses[Math.floor(Math.random() * this.aiResponses.length)];
+                this.showAIMessage(aiMessage);
+                
+                document.getElementById('taskDescription').value = '';
+                document.getElementById('taskPriority').value = 'normal';
+                
+                this.renderTasks();
+                this.updateStats();
+            }
+            
+            completeTask(taskId) {
+                const task = this.tasks.find(t => t.id === taskId);
+                if (task && !task.completed) {
+                    task.completed = true;
+                    task.completedAt = new Date().toISOString();
+                    this.saveTasks();
+                    
+                    const aiMessage = this.completionMessages[Math.floor(Math.random() * this.completionMessages.length)];
+                    this.showAIMessage(aiMessage);
+                    
+                    this.renderTasks();
+                    this.updateStats();
+                }
+            }
+            
+            deleteTask(taskId) {
+                if (confirm('Êtes-vous sûr de vouloir supprimer cette mission ?')) {
+                    this.tasks = this.tasks.filter(t => t.id !== taskId);
+                    this.saveTasks();
+                    
+                    this.showAIMessage("Mission effacée des registres temporels.");
+                    
+                    this.renderTasks();
+                    this.updateStats();
+                }
+            }
+            
+            showAIMessage(message) {
+                const aiMessageDiv = document.getElementById('aiMessage');
+                aiMessageDiv.textContent = message;
+                aiMessageDiv.style.animation = 'none';
+                setTimeout(() => {
+                    aiMessageDiv.style.animation = 'fadeIn 0.5s ease-in';
+                }, 10);
+            }
+            
+            getPriorityLabel(priority) {
+                const labels = {
+                    'normal': '🔵 Normal',
+                    'prioritaire': '🟡 Prioritaire',
+                    'critique_galactique': '🔴 Critique Galactique'
+                };
+                return labels[priority] || '🔵 Normal';
+            }
+            
+            renderTasks() {
+                const tasksList = document.getElementById('tasksList');
+                
+                if (this.tasks.length === 0) {
+                    tasksList.innerHTML = `
+                        <div class="empty-state">
+                            <h4>🌌 Base de données vide</h4>
+                            <p>Aucune mission en cours. L'univers attend vos instructions...</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const tasksHTML = this.tasks.map(task => `
+                    <div class="task-item ${task.completed ? 'completed' : ''} fade-in">
+                        <div class="task-header">
+                            <div class="task-id">#${task.id.toString().padStart(2, '0')}</div>
+                            <div class="task-priority priority-${task.priority}">
+                                ${this.getPriorityLabel(task.priority)}
+                            </div>
+                        </div>
+                        <div class="task-description">
+                            ${task.completed ? '✅' : '⏳'} ${task.description}
+                        </div>
+                        <div class="task-info">
+                            <span class="success-rate">📈 Taux de réussite: ${task.successRate}%</span>
+                            <span>📅 ${task.createdAt.substring(0, 10)}</span>
+                        </div>
+                        <div class="task-actions">
+                            ${!task.completed ? `<button class="btn btn-small" onclick="todo.completeTask(${task.id})">✅ Terminer</button>` : ''}
+                            <button class="btn btn-danger btn-small" onclick="todo.deleteTask(${task.id})">🗑️ Supprimer</button>
+                        </div>
+                    </div>
+                `).join('');
+                
+                tasksList.innerHTML = tasksHTML;
+            }
+            
+            updateStats() {
+                const total = this.tasks.length;
+                const completed = this.tasks.filter(t => t.completed).length;
+                const pending = total - completed;
+                const completionRate = total > 0 ? (completed / total * 100) : 0;
+                
+                document.getElementById('totalTasks').textContent = total;
+                document.getElementById('completedTasks').textContent = completed;
+                document.getElementById('pendingTasks').textContent = pending;
+                document.getElementById('completionRate').textContent = completionRate.toFixed(1) + '%';
+            }
+        }
+        
+        // Initialisation de l'application
+        let todo;
+        document.addEventListener('DOMContentLoaded', function() {
+            todo = new ToDo3000();
+        });
+    </script>
+</body>
+</html>
