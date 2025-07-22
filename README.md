@@ -5,11 +5,13 @@
 
 <div align="center">
 
-### 🎮 [**DÉMO EN DIRECT - CLIQUEZ ICI !**](https://gabrielc0.github.io/TODO-3000/todo_3000.html)
+### 🎮 [**DÉMO EN DIRECT - CLIQUEZ ICI !**](https://htmlpreview.github.io/?https://github.com/GabrielC0/TODO-3000/blob/main/todo_3000.html)
 
-[![Tester TO-DO 3000](https://img.shields.io/badge/🚀%20TESTER%20MAINTENANT-TO--DO%203000-00ffff?style=for-the-badge&logoColor=white)](https://gabrielc0.github.io/TODO-3000/todo_3000.html)
+[![Tester TO-DO 3000](https://img.shields.io/badge/🚀%20TESTER%20MAINTENANT-TO--DO%203000-00ffff?style=for-the-badge&logoColor=white)](https://htmlpreview.github.io/?https://github.com/GabrielC0/TODO-3000/blob/main/todo_3000.html)
 
 *Aucune installation requise - Fonctionne dans votre navigateur !*
+
+> 📝 **Note** : Les liens utilisent htmlpreview.github.io pour visualiser l'HTML. Pour une expérience optimale, vous pouvez activer GitHub Pages dans Settings > Pages de votre repository.
 
 </div>
 
@@ -21,7 +23,7 @@
 
 | Action | Lien |
 |--------|------|
-| 🎮 **Tester l'App** | **[DÉMO LIVE](https://gabrielc0.github.io/TODO-3000/todo_3000.html)** |
+| 🎮 **Tester l'App** | **[DÉMO LIVE](https://htmlpreview.github.io/?https://github.com/GabrielC0/TODO-3000/blob/main/todo_3000.html)** |
 | 📥 **Télécharger HTML** | **[todo_3000.html](https://raw.githubusercontent.com/GabrielC0/TODO-3000/main/todo_3000.html)** |
 | 💻 **Version Console** | **[todo_3000.py](https://raw.githubusercontent.com/GabrielC0/TODO-3000/main/todo_3000.py)** |
 | 🌐 **Version Serveur** | **[todo_3000_web.py](https://raw.githubusercontent.com/GabrielC0/TODO-3000/main/todo_3000_web.py)** |
@@ -33,7 +35,7 @@
 ## 🚀 Démarrage Rapide
 
 ### ⚡ Test en Live
-**[🌟 TESTER TO-DO 3000 EN DIRECT 🌟](https://gabrielc0.github.io/TODO-3000/todo_3000.html)**
+**[🌟 TESTER TO-DO 3000 EN DIRECT 🌟](https://htmlpreview.github.io/?https://github.com/GabrielC0/TODO-3000/blob/main/todo_3000.html)**
 
 *Cliquez sur le lien ci-dessus pour lancer l'application immédiatement !*
 
@@ -48,7 +50,7 @@ Aucune installation requise - ça s'ouvre directement dans votre navigateur !
 
 | Version | Fichier | Description | Status | Demo |
 |---------|---------|-------------|--------|------|
-| 🌐 **Standalone** | `todo_3000.html` | Interface complète, aucune install | ✅ **RECOMMANDÉ** | **[🎮 TESTER](https://gabrielc0.github.io/TODO-3000/todo_3000.html)** |
+| 🌐 **Standalone** | `todo_3000.html` | Interface complète, aucune install | ✅ **RECOMMANDÉ** | **[🎮 TESTER](https://htmlpreview.github.io/?https://github.com/GabrielC0/TODO-3000/blob/main/todo_3000.html)** |
 | 💻 **Console** | `todo_3000.py` | Terminal interactif Python | ⚡ Rapide | `python todo_3000.py` |
 | 🖥️ **Web Server** | `todo_3000_web.py` | Serveur Flask complet | 🔧 Avancé | `localhost:5000` |
 
@@ -170,6 +172,16 @@ this.aiResponses = [
 🚀 Performance optimisée avec animations fluides
 ```
 
+### 🌐 Activer GitHub Pages (Optionnel)
+
+Pour une expérience optimale, activez GitHub Pages :
+
+1. Allez dans **Settings** > **Pages** de votre repository
+2. Sélectionnez **Deploy from a branch**
+3. Choisissez **main branch**
+4. Cliquez **Save**
+5. L'app sera disponible à : `https://gabrielc0.github.io/TODO-3000/todo_3000.html`
+
 ---
 
 ## 🏆 Achievements
@@ -196,7 +208,7 @@ this.aiResponses = [
 ### 🌌 Interface Principale
 ![Interface TO-DO 3000](https://via.placeholder.com/800x400/0c0c0c/00ffff?text=🌟+TO-DO+3000+🌟%0A%0AInterface+Futuriste+avec+Animations+d'Étoiles%0A%0A🎮+CLIQUEZ+SUR+LE+LIEN+DEMO+CI-DESSUS+🎮)
 
-**[🚀 VOIR L'INTERFACE EN ACTION](https://gabrielc0.github.io/TODO-3000/todo_3000.html)**
+**[🚀 VOIR L'INTERFACE EN ACTION](https://htmlpreview.github.io/?https://github.com/GabrielC0/TODO-3000/blob/main/todo_3000.html)**
 
 </div>
 
