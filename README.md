@@ -5,9 +5,9 @@
 
 <div align="center">
 
-### 🎮 [**DÉMO EN DIRECT - CLIQUEZ ICI !**](./todo_3000_standalone.html)
+### 🎮 [**DÉMO EN DIRECT - CLIQUEZ ICI !**](https://gabrielc0.github.io/TODO-3000/todo_3000.html)
 
-[![Tester TO-DO 3000](https://img.shields.io/badge/🚀%20TESTER%20MAINTENANT-TO--DO%203000-00ffff?style=for-the-badge&logoColor=white)](./todo_3000_standalone.html)
+[![Tester TO-DO 3000](https://img.shields.io/badge/🚀%20TESTER%20MAINTENANT-TO--DO%203000-00ffff?style=for-the-badge&logoColor=white)](https://gabrielc0.github.io/TODO-3000/todo_3000.html)
 
 *Aucune installation requise - Fonctionne dans votre navigateur !*
 
@@ -21,10 +21,10 @@
 
 | Action | Lien |
 |--------|------|
-| 🎮 **Tester l'App** | **[DÉMO LIVE](./todo_3000_standalone.html)** |
-| 📥 **Télécharger** | **[todo_3000_standalone.html](./todo_3000_standalone.html)** |
-| 💻 **Version Console** | **[todo_3000.py](./todo_3000.py)** |
-| 🌐 **Version Serveur** | **[todo_3000_web.py](./todo_3000_web.py)** |
+| 🎮 **Tester l'App** | **[DÉMO LIVE](https://gabrielc0.github.io/TODO-3000/todo_3000.html)** |
+| 📥 **Télécharger HTML** | **[todo_3000.html](https://raw.githubusercontent.com/GabrielC0/TODO-3000/main/todo_3000.html)** |
+| 💻 **Version Console** | **[todo_3000.py](https://raw.githubusercontent.com/GabrielC0/TODO-3000/main/todo_3000.py)** |
+| 🌐 **Version Serveur** | **[todo_3000_web.py](https://raw.githubusercontent.com/GabrielC0/TODO-3000/main/todo_3000_web.py)** |
 
 </div>
 
@@ -33,12 +33,12 @@
 ## 🚀 Démarrage Rapide
 
 ### ⚡ Test en Live
-**[🌟 TESTER TO-DO 3000 EN DIRECT 🌟](./todo_3000_standalone.html)**
+**[🌟 TESTER TO-DO 3000 EN DIRECT 🌟](https://gabrielc0.github.io/TODO-3000/todo_3000.html)**
 
 *Cliquez sur le lien ci-dessus pour lancer l'application immédiatement !*
 
 ### 💻 Installation Locale
-**Double-cliquez sur `todo_3000_standalone.html` et c'est parti !** 🎯
+**Double-cliquez sur `todo_3000.html` et c'est parti !** 🎯
 
 Aucune installation requise - ça s'ouvre directement dans votre navigateur !
 
@@ -48,7 +48,7 @@ Aucune installation requise - ça s'ouvre directement dans votre navigateur !
 
 | Version | Fichier | Description | Status | Demo |
 |---------|---------|-------------|--------|------|
-| 🌐 **Standalone** | `todo_3000_standalone.html` | Interface complète, aucune install | ✅ **RECOMMANDÉ** | **[🎮 TESTER](./todo_3000_standalone.html)** |
+| 🌐 **Standalone** | `todo_3000.html` | Interface complète, aucune install | ✅ **RECOMMANDÉ** | **[🎮 TESTER](https://gabrielc0.github.io/TODO-3000/todo_3000.html)** |
 | 💻 **Console** | `todo_3000.py` | Terminal interactif Python | ⚡ Rapide | `python todo_3000.py` |
 | 🖥️ **Web Server** | `todo_3000_web.py` | Serveur Flask complet | 🔧 Avancé | `localhost:5000` |
 
@@ -196,7 +196,7 @@ this.aiResponses = [
 ### 🌌 Interface Principale
 ![Interface TO-DO 3000](https://via.placeholder.com/800x400/0c0c0c/00ffff?text=🌟+TO-DO+3000+🌟%0A%0AInterface+Futuriste+avec+Animations+d'Étoiles%0A%0A🎮+CLIQUEZ+SUR+LE+LIEN+DEMO+CI-DESSUS+🎮)
 
-**[🚀 VOIR L'INTERFACE EN ACTION](./todo_3000_standalone.html)**
+**[🚀 VOIR L'INTERFACE EN ACTION](https://gabrielc0.github.io/TODO-3000/todo_3000.html)**
 
 </div>
 
@@ -214,7 +214,7 @@ this.aiResponses = [
 
 ```
 📁 TO-DO 3000/
-├── 📄 todo_3000_standalone.html    # Version standalone (PRINCIPAL)
+├── 📄 todo_3000.html               # Version standalone (PRINCIPAL)
 ├── 📄 todo_3000.py                 # Version console Python
 ├── 📄 todo_3000_web.py             # Version serveur Flask
 ├── 📁 templates/
